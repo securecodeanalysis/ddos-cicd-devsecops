@@ -1,0 +1,19 @@
+# action.yml
+name: ddosify action
+description: Run performance tests using ddosify
+#author: NaveenKumar Namachivayam - https://qainsights.com
+
+branding:
+  color: blue
+  icon: zap
+
+inputs:
+  args:
+    required: true
+    description: Mandatory arguments. For more details, please check https://github.com/ddosify/ddosify#readme
+
+runs:
+    using: "composite"
+    steps:
+      - run: ./script.sh ${{ inputs.args }}
+        shell: bash 
