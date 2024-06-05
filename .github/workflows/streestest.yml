@@ -41,7 +41,7 @@ jobs:
 
       - name: Run curl command
         run: |
-          - apt-get update
-          - apt-get install uuid-runtime -y
+          - apt update
+          - apt install uuid-runtime -y
           - for i in $(seq 1 $num1);do curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)";done
           - echo " First job ran successfully"
