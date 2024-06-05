@@ -1,0 +1,25 @@
+on: [push]
+jobs:
+  jmeter_job:
+    runs-on: ubuntu-latest
+    name: ddosify Test Execution
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.17.3' # The Go version to download (if necessary) and use.
+      - run: go version
+
+      - name: Execute ddosify 
+        uses: ./
+        with:
+          args: "-t https://testngwaf.global.ssl.fastly.net"
+      
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: ddosify-results
+          path: ./*.log
