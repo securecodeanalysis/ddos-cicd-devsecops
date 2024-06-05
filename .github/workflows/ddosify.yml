@@ -16,7 +16,7 @@ jobs:
       - name: Execute ddosify 
         uses: ./
         with:
-          args: "-t testngwaf.global.ssl.fastly.net"
+          args: "-t https://testngwaf.global.ssl.fastly.net"
       
       - name: Upload Results
         uses: actions/upload-artifact@v2
