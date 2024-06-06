@@ -1,6 +1,6 @@
 name: Run Docker Command
 env:
-  URL: "https://testngwaf.global.ssl.fastly.net"
+      URL: "https://testngwaf.global.ssl.fastly.net"
 on:
   push:
     branches:
