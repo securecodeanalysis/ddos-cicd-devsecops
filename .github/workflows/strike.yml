@@ -17,6 +17,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Docker command
-        run: docker run --rm -ti cyberhack255/strike attack https://testngwaf.global.ssl.fastly.net 300 1000 $PROXY 1000
+        run: docker run --rm -ti cyberhack255/strike attack https://testngwaf.global.ssl.fastly.net 300 1000 $PROXY 100
   
 
