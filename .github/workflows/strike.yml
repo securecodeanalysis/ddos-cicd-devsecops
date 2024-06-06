@@ -19,7 +19,7 @@ jobs:
       - name: Instance 1
         uses: actions/checkout@v3
 
-      - name: Run Docker command
+      - name: Run Docker container inside the action docker
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
@@ -33,7 +33,7 @@ jobs:
       - name: Instance 2
         uses: actions/checkout@v3
 
-      - name: Run Docker command
+      - name: Run Docker container inside the action docker
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
@@ -47,7 +47,7 @@ jobs:
       - name: Instance 3
         uses: actions/checkout@v3
 
-      - name: Run Docker command
+      - name: Run Docker container inside the action docker
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
@@ -60,7 +60,7 @@ jobs:
       - name: Instance 4
         uses: actions/checkout@v3
 
-      - name: Run Docker command
+      - name: Run Docker container inside the action docker
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
@@ -73,7 +73,7 @@ jobs:
       - name: Instance 5
         uses: actions/checkout@v3
 
-      - name: Run Docker command
+      - name: Run Docker container inside the action docker
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
