@@ -1,0 +1,23 @@
+name: Run Docker Command
+
+on:
+  push:
+    branches:
+      - notexist
+  pull_request:
+    branches:
+      - notexist
+
+jobs:
+  run-docker-command-1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Instance 1
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        uses: addnab/docker-run-action@v3
+        with:
+            image: <<image name>>
+            run: | 
