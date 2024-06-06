@@ -1,6 +1,5 @@
 name: Run Docker Command
-env:
-      URL: "https://testngwaf.global.ssl.fastly.net"
+
 on:
   push:
     branches:
@@ -16,14 +15,13 @@ jobs:
     steps:
       - name: Instance 1
         uses: actions/checkout@v3
-        env:
-            URL1: $URL
+
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l $URL1
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
 
   run-docker-command-2:
     runs-on: ubuntu-latest
@@ -31,14 +29,13 @@ jobs:
     steps:
       - name: Instance 2
         uses: actions/checkout@v3
-        env:
-            URL1: $URL
+
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l $URL1
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
 
   run-docker-command-3:
     runs-on: ubuntu-latest
@@ -46,14 +43,13 @@ jobs:
     steps:
       - name: Instance 3
         uses: actions/checkout@v3
-        env:
-            URL1: $URL
+
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l $URL1
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
 
   run-docker-command-4:
     runs-on: ubuntu-latest
@@ -61,14 +57,13 @@ jobs:
     steps:
       - name: Instance 4
         uses: actions/checkout@v3
-        env:
-            URL1: $URL
+
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l $URL1
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
   
   run-docker-command-5:
     runs-on: ubuntu-latest
@@ -76,11 +71,10 @@ jobs:
     steps:
       - name: Instance 5
         uses: actions/checkout@v3
-        env:
-            URL1: $URL
+
       - name: Run Docker command
         uses: addnab/docker-run-action@v3
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l $URL1
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
