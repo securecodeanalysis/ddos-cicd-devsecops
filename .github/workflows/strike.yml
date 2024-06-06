@@ -1,5 +1,6 @@
 name: Run Docker Command
-
+env:
+  URL: "https://testngwaf.global.ssl.fastly.net"
 on:
   push:
     branches:
@@ -21,6 +22,6 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
+                  bombardier -c 10000 -d 120s -l $URL
   
 
