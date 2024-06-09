@@ -7,10 +7,10 @@ env:
 on:
   push:
     branches:
-      - noexist
+      - noexist1
   pull_request:
     branches:
-      - noexist
+      - noexist1
 
 jobs:
   run-commands-1:
