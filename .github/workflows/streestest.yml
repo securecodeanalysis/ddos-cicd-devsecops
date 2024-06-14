@@ -1,16 +1,16 @@
 name: Run Commands
 env:
-    num1: 1000         
+    num1: 10000         
     UA: "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.6422.66 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"  
     METHOD: "POST"     
     URL: "https://www.example.com" 
 on:
   push:
     branches:
-      - notexit
+      - noexist1
   pull_request:
     branches:
-      - notexit
+      - noexist1
 
 jobs:
   run-commands-1:
@@ -23,13 +23,13 @@ jobs:
 
     - name: Update APT and install uuid-runtime
       run: |
-        # sudo apt-get update
-        # sudo apt-get install uuid-runtime -y
+        sudo apt-get update
+        sudo apt-get install uuid-runtime -y
 
     - name: Run curl commands
       run: |
         for i in $(seq 1 $num1); do
-          curl -I -H "user-agent:$UA" -X$METHOD "$URL"
+          curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)"
         done
         echo "First job ran successfully"
         
@@ -43,13 +43,13 @@ jobs:
 
     - name: Update APT and install uuid-runtime
       run: |
-        # sudo apt-get update
-        # sudo apt-get install uuid-runtime -y
+        sudo apt-get update
+        sudo apt-get install uuid-runtime -y
 
     - name: Run curl commands
       run: |
         for i in $(seq 1 $num1); do
-          curl -I -H "user-agent:$UA" -X$METHOD "$URL"
+          curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)"
         done
         echo "Second job ran successfully"
         
@@ -63,13 +63,13 @@ jobs:
 
     - name: Update APT and install uuid-runtime
       run: |
-        # sudo apt-get update
-        # sudo apt-get install uuid-runtime -y
+        sudo apt-get update
+        sudo apt-get install uuid-runtime -y
 
     - name: Run curl commands
       run: |
         for i in $(seq 1 $num1); do
-          curl -I -H "user-agent:$UA" -X$METHOD "$URL"
+          curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)"
         done
         echo "Third job ran successfully"
 
@@ -82,13 +82,13 @@ jobs:
 
     - name: Update APT and install uuid-runtime
       run: |
-        # sudo apt-get update
-        # sudo apt-get install uuid-runtime -y
+        sudo apt-get update
+        sudo apt-get install uuid-runtime -y
 
     - name: Run curl commands
       run: |
         for i in $(seq 1 $num1); do
-          curl -I -H "user-agent:$UA" -X$METHOD "$URL"
+          curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)"
         done
         echo "Fourth job ran successfully"
         
@@ -101,13 +101,13 @@ jobs:
 
     - name: Update APT and install uuid-runtime
       run: |
-        # sudo apt-get update
-        # sudo apt-get install uuid-runtime -y
+        sudo apt-get update
+        sudo apt-get install uuid-runtime -y
 
     - name: Run curl commands
       run: |
         for i in $(seq 1 $num1); do
-          curl -I -H "user-agent:$UA" -X$METHOD "$URL"
+          curl -I -H "user-agent:$UA" -X$METHOD "$URL/$(uuidgen)"
         done
         echo "Fourth job ran successfully"
     
